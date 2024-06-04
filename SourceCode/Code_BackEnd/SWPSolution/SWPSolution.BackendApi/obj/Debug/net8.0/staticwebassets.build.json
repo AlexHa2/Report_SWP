@@ -1,10 +1,6 @@
 {
   "Version": 1,
-<<<<<<< HEAD
-  "Hash": "9zIvjDukc7YSL378+PUrrfbCGv/G3EwxdnwA5lom/os=",
-=======
-  "Hash": "2qceBzzNNcjlKZTuTiJvTZdCsMUgdHWwnmPEBdK2XAs=",
->>>>>>> 2d040d2f4948dfd4051e2de1269ea426d931231c
+  "Hash": "zq+Q2MkTO3h0gXG2aTL4Y/uptBhNn3lqJqxw1ocAoa4=",
   "Source": "SWPSolution.BackendApi",
   "BasePath": "_content/SWPSolution.BackendApi",
   "Mode": "Default",
@@ -1180,30 +1176,7 @@
       "OriginalItemSpec": "wwwroot\\user-content\\0454bb64-dea8-49fd-be2e-41fabe64bdde.png"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\077dcbc7-d231-41b6-be1f-241ae91771cb.png",
-=======
-      "Identity": "G:\\Project alll\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\0f77a8f6-e8e2-43ff-a3ba-9e2651488ccc.jpg",
-      "SourceId": "SWPSolution.BackendApi",
-      "SourceType": "Discovered",
-      "ContentRoot": "G:\\Project alll\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
-      "BasePath": "_content/SWPSolution.BackendApi",
-      "RelativePath": "user-content/0f77a8f6-e8e2-43ff-a3ba-9e2651488ccc.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\user-content\\0f77a8f6-e8e2-43ff-a3ba-9e2651488ccc.jpg"
-    },
-    {
-      "Identity": "G:\\Project alll\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\11104bd0-57e4-405c-b05e-a5c889c78dd8.png",
->>>>>>> 2d040d2f4948dfd4051e2de1269ea426d931231c
       "SourceId": "SWPSolution.BackendApi",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
@@ -1220,6 +1193,44 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\user-content\\077dcbc7-d231-41b6-be1f-241ae91771cb.png"
+    },
+    {
+      "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\088447f8-7467-447d-bc90-3c0e2c84dd33.png",
+      "SourceId": "SWPSolution.BackendApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
+      "BasePath": "_content/SWPSolution.BackendApi",
+      "RelativePath": "user-content/088447f8-7467-447d-bc90-3c0e2c84dd33.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user-content\\088447f8-7467-447d-bc90-3c0e2c84dd33.png"
+    },
+    {
+      "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\0f77a8f6-e8e2-43ff-a3ba-9e2651488ccc.jpg",
+      "SourceId": "SWPSolution.BackendApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
+      "BasePath": "_content/SWPSolution.BackendApi",
+      "RelativePath": "user-content/0f77a8f6-e8e2-43ff-a3ba-9e2651488ccc.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user-content\\0f77a8f6-e8e2-43ff-a3ba-9e2651488ccc.jpg"
     },
     {
       "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\11104bd0-57e4-405c-b05e-a5c889c78dd8.png",
@@ -1317,6 +1328,44 @@
       "OriginalItemSpec": "wwwroot\\user-content\\391bd4cc-b98e-4548-bfef-f0fe6641219c.png"
     },
     {
+      "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\41169fcc-f4a0-4dad-b626-3af1b39bed5d.png",
+      "SourceId": "SWPSolution.BackendApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
+      "BasePath": "_content/SWPSolution.BackendApi",
+      "RelativePath": "user-content/41169fcc-f4a0-4dad-b626-3af1b39bed5d.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user-content\\41169fcc-f4a0-4dad-b626-3af1b39bed5d.png"
+    },
+    {
+      "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\41858caa-3ae1-4a8a-b333-d2cb5fc24a6d.png",
+      "SourceId": "SWPSolution.BackendApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
+      "BasePath": "_content/SWPSolution.BackendApi",
+      "RelativePath": "user-content/41858caa-3ae1-4a8a-b333-d2cb5fc24a6d.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user-content\\41858caa-3ae1-4a8a-b333-d2cb5fc24a6d.png"
+    },
+    {
       "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\4ec17b06-b60d-484b-8539-cd65837be917.png",
       "SourceId": "SWPSolution.BackendApi",
       "SourceType": "Discovered",
@@ -1412,6 +1461,25 @@
       "OriginalItemSpec": "wwwroot\\user-content\\5a9c4675-9d56-4d95-9fcf-ae454f5c049f.png"
     },
     {
+      "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\617c77c9-9b02-4890-98b5-50c49dff11b9.png",
+      "SourceId": "SWPSolution.BackendApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
+      "BasePath": "_content/SWPSolution.BackendApi",
+      "RelativePath": "user-content/617c77c9-9b02-4890-98b5-50c49dff11b9.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user-content\\617c77c9-9b02-4890-98b5-50c49dff11b9.png"
+    },
+    {
       "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\6330c019-3ec6-4dc4-8c45-92beaeb748b9.png",
       "SourceId": "SWPSolution.BackendApi",
       "SourceType": "Discovered",
@@ -1431,30 +1499,7 @@
       "OriginalItemSpec": "wwwroot\\user-content\\6330c019-3ec6-4dc4-8c45-92beaeb748b9.png"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\68524732-c7cf-4af5-970e-3de19004d0bd.png",
-=======
-      "Identity": "G:\\Project alll\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\6ee0fa47-fd58-4319-b86b-9467f896f1d5.jpg",
-      "SourceId": "SWPSolution.BackendApi",
-      "SourceType": "Discovered",
-      "ContentRoot": "G:\\Project alll\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
-      "BasePath": "_content/SWPSolution.BackendApi",
-      "RelativePath": "user-content/6ee0fa47-fd58-4319-b86b-9467f896f1d5.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\user-content\\6ee0fa47-fd58-4319-b86b-9467f896f1d5.jpg"
-    },
-    {
-      "Identity": "G:\\Project alll\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\6f3e226b-6d9e-43f0-9579-5df733aa714b.png",
->>>>>>> 2d040d2f4948dfd4051e2de1269ea426d931231c
       "SourceId": "SWPSolution.BackendApi",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
@@ -1471,6 +1516,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\user-content\\68524732-c7cf-4af5-970e-3de19004d0bd.png"
+    },
+    {
+      "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\6ee0fa47-fd58-4319-b86b-9467f896f1d5.jpg",
+      "SourceId": "SWPSolution.BackendApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
+      "BasePath": "_content/SWPSolution.BackendApi",
+      "RelativePath": "user-content/6ee0fa47-fd58-4319-b86b-9467f896f1d5.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user-content\\6ee0fa47-fd58-4319-b86b-9467f896f1d5.jpg"
     },
     {
       "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\6f3e226b-6d9e-43f0-9579-5df733aa714b.png",
@@ -1530,13 +1594,10 @@
       "OriginalItemSpec": "wwwroot\\user-content\\78a3478e-1220-4f13-9c06-fb2f9c4da41d.png"
     },
     {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\91c7a4d6-d462-42c1-b6ab-8873f9b8e6c0.png",
-=======
-      "Identity": "G:\\Project alll\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\81b645e5-ef0c-4049-b227-07ad997e9bce.jpg",
+      "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\81b645e5-ef0c-4049-b227-07ad997e9bce.jpg",
       "SourceId": "SWPSolution.BackendApi",
       "SourceType": "Discovered",
-      "ContentRoot": "G:\\Project alll\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
       "BasePath": "_content/SWPSolution.BackendApi",
       "RelativePath": "user-content/81b645e5-ef0c-4049-b227-07ad997e9bce.jpg",
       "AssetKind": "All",
@@ -1552,10 +1613,10 @@
       "OriginalItemSpec": "wwwroot\\user-content\\81b645e5-ef0c-4049-b227-07ad997e9bce.jpg"
     },
     {
-      "Identity": "G:\\Project alll\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\8ccb1e47-c25a-45be-8b6c-f210e2e593ac.jpg",
+      "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\8ccb1e47-c25a-45be-8b6c-f210e2e593ac.jpg",
       "SourceId": "SWPSolution.BackendApi",
       "SourceType": "Discovered",
-      "ContentRoot": "G:\\Project alll\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
       "BasePath": "_content/SWPSolution.BackendApi",
       "RelativePath": "user-content/8ccb1e47-c25a-45be-8b6c-f210e2e593ac.jpg",
       "AssetKind": "All",
@@ -1571,8 +1632,7 @@
       "OriginalItemSpec": "wwwroot\\user-content\\8ccb1e47-c25a-45be-8b6c-f210e2e593ac.jpg"
     },
     {
-      "Identity": "G:\\Project alll\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\91c7a4d6-d462-42c1-b6ab-8873f9b8e6c0.png",
->>>>>>> 2d040d2f4948dfd4051e2de1269ea426d931231c
+      "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\91c7a4d6-d462-42c1-b6ab-8873f9b8e6c0.png",
       "SourceId": "SWPSolution.BackendApi",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
@@ -1589,6 +1649,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\user-content\\91c7a4d6-d462-42c1-b6ab-8873f9b8e6c0.png"
+    },
+    {
+      "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\9872c91f-1310-4871-8f78-494dfbd99b9d.png",
+      "SourceId": "SWPSolution.BackendApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
+      "BasePath": "_content/SWPSolution.BackendApi",
+      "RelativePath": "user-content/9872c91f-1310-4871-8f78-494dfbd99b9d.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user-content\\9872c91f-1310-4871-8f78-494dfbd99b9d.png"
     },
     {
       "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\9aca0cd3-1cf8-48cc-a352-e1f5dc0df235.png",
@@ -1610,49 +1689,7 @@
       "OriginalItemSpec": "wwwroot\\user-content\\9aca0cd3-1cf8-48cc-a352-e1f5dc0df235.png"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\aa27b50e-b106-49a4-b0b8-608dec8f07fa.png",
-=======
-      "Identity": "G:\\Project alll\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\ab06c719-d97d-4046-a989-4636009c87ac.jpg",
-      "SourceId": "SWPSolution.BackendApi",
-      "SourceType": "Discovered",
-      "ContentRoot": "G:\\Project alll\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
-      "BasePath": "_content/SWPSolution.BackendApi",
-      "RelativePath": "user-content/ab06c719-d97d-4046-a989-4636009c87ac.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\user-content\\ab06c719-d97d-4046-a989-4636009c87ac.jpg"
-    },
-    {
-      "Identity": "G:\\Project alll\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\b1107d8f-a5be-4d70-b4c0-14dd25767109.jpg",
-      "SourceId": "SWPSolution.BackendApi",
-      "SourceType": "Discovered",
-      "ContentRoot": "G:\\Project alll\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
-      "BasePath": "_content/SWPSolution.BackendApi",
-      "RelativePath": "user-content/b1107d8f-a5be-4d70-b4c0-14dd25767109.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\user-content\\b1107d8f-a5be-4d70-b4c0-14dd25767109.jpg"
-    },
-    {
-      "Identity": "G:\\Project alll\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\c33f8f1a-4b1e-42c7-8aa3-6e46dc8c6cda.png",
->>>>>>> 2d040d2f4948dfd4051e2de1269ea426d931231c
       "SourceId": "SWPSolution.BackendApi",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
@@ -1669,6 +1706,44 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\user-content\\aa27b50e-b106-49a4-b0b8-608dec8f07fa.png"
+    },
+    {
+      "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\ab06c719-d97d-4046-a989-4636009c87ac.jpg",
+      "SourceId": "SWPSolution.BackendApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
+      "BasePath": "_content/SWPSolution.BackendApi",
+      "RelativePath": "user-content/ab06c719-d97d-4046-a989-4636009c87ac.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user-content\\ab06c719-d97d-4046-a989-4636009c87ac.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\b1107d8f-a5be-4d70-b4c0-14dd25767109.jpg",
+      "SourceId": "SWPSolution.BackendApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
+      "BasePath": "_content/SWPSolution.BackendApi",
+      "RelativePath": "user-content/b1107d8f-a5be-4d70-b4c0-14dd25767109.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user-content\\b1107d8f-a5be-4d70-b4c0-14dd25767109.jpg"
     },
     {
       "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\c33f8f1a-4b1e-42c7-8aa3-6e46dc8c6cda.png",
@@ -1709,6 +1784,44 @@
       "OriginalItemSpec": "wwwroot\\user-content\\c6f978c8-068b-446a-ab0d-28b5ea868a3a.png"
     },
     {
+      "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\dcc67b14-4c3a-4049-9f7f-32869980a78c.png",
+      "SourceId": "SWPSolution.BackendApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
+      "BasePath": "_content/SWPSolution.BackendApi",
+      "RelativePath": "user-content/dcc67b14-4c3a-4049-9f7f-32869980a78c.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user-content\\dcc67b14-4c3a-4049-9f7f-32869980a78c.png"
+    },
+    {
+      "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\dee31c81-9dba-488c-8bb4-58787c2e3550.png",
+      "SourceId": "SWPSolution.BackendApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
+      "BasePath": "_content/SWPSolution.BackendApi",
+      "RelativePath": "user-content/dee31c81-9dba-488c-8bb4-58787c2e3550.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user-content\\dee31c81-9dba-488c-8bb4-58787c2e3550.png"
+    },
+    {
       "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\e4247e58-18ee-4851-8a4d-839e96e218b7.png",
       "SourceId": "SWPSolution.BackendApi",
       "SourceType": "Discovered",
@@ -1728,13 +1841,10 @@
       "OriginalItemSpec": "wwwroot\\user-content\\e4247e58-18ee-4851-8a4d-839e96e218b7.png"
     },
     {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\f295364d-623e-4444-9a13-c9b7b0c42211.png",
-=======
-      "Identity": "G:\\Project alll\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\ec68cf98-8102-44bb-8ad0-25111606d137.jpg",
+      "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\ec68cf98-8102-44bb-8ad0-25111606d137.jpg",
       "SourceId": "SWPSolution.BackendApi",
       "SourceType": "Discovered",
-      "ContentRoot": "G:\\Project alll\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
       "BasePath": "_content/SWPSolution.BackendApi",
       "RelativePath": "user-content/ec68cf98-8102-44bb-8ad0-25111606d137.jpg",
       "AssetKind": "All",
@@ -1750,8 +1860,26 @@
       "OriginalItemSpec": "wwwroot\\user-content\\ec68cf98-8102-44bb-8ad0-25111606d137.jpg"
     },
     {
-      "Identity": "G:\\Project alll\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\f295364d-623e-4444-9a13-c9b7b0c42211.png",
->>>>>>> 2d040d2f4948dfd4051e2de1269ea426d931231c
+      "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\ede0d214-577c-4fb5-bbf1-4ebcccfec03b.png",
+      "SourceId": "SWPSolution.BackendApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
+      "BasePath": "_content/SWPSolution.BackendApi",
+      "RelativePath": "user-content/ede0d214-577c-4fb5-bbf1-4ebcccfec03b.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user-content\\ede0d214-577c-4fb5-bbf1-4ebcccfec03b.png"
+    },
+    {
+      "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\f295364d-623e-4444-9a13-c9b7b0c42211.png",
       "SourceId": "SWPSolution.BackendApi",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
@@ -1770,10 +1898,10 @@
       "OriginalItemSpec": "wwwroot\\user-content\\f295364d-623e-4444-9a13-c9b7b0c42211.png"
     },
     {
-      "Identity": "G:\\Project alll\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\f4627631-16a8-41b3-9932-e6b1f63b3560.jpg",
+      "Identity": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\user-content\\f4627631-16a8-41b3-9932-e6b1f63b3560.jpg",
       "SourceId": "SWPSolution.BackendApi",
       "SourceType": "Discovered",
-      "ContentRoot": "G:\\Project alll\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\khanh\\source\\repos\\Report_SWP\\SourceCode\\Code_BackEnd\\SWPSolution\\SWPSolution.BackendApi\\wwwroot\\",
       "BasePath": "_content/SWPSolution.BackendApi",
       "RelativePath": "user-content/f4627631-16a8-41b3-9932-e6b1f63b3560.jpg",
       "AssetKind": "All",

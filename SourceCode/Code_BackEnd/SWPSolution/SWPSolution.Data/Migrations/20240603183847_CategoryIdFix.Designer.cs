@@ -12,8 +12,8 @@ using SWPSolution.Data.Entities;
 namespace SWPSolution.Data.Migrations
 {
     [DbContext(typeof(SWPSolutionDBContext))]
-    [Migration("20240603080104_fixAppUser")]
-    partial class fixAppUser
+    [Migration("20240603183847_CategoryIdFix")]
+    partial class CategoryIdFix
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -348,7 +348,7 @@ namespace SWPSolution.Data.Migrations
                         {
                             Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5b1ba429-121e-494f-afc0-7b7f0f9c557e",
+                            ConcurrencyStamp = "f298b132-f5bb-4ee9-a7dc-2317a32276ad",
                             Email = "tedu.international@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Toan",
@@ -356,7 +356,7 @@ namespace SWPSolution.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "tedu.international@gmail.com",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAIAAYagAAAAEAU489HC5zCpLuu3qIQWCOQ6CB/K5dCkXeqnwrn0UYgRPk2BWVDmcOE+ZpFM8cuNvg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEhO8MrI0Afv9NYqV95WXUH9Nk+CDe0B2x9gC3W3/VULiwpT5zikXF3JF81xdNS6Lw==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TemporaryPassword = "",
@@ -414,9 +414,10 @@ namespace SWPSolution.Data.Migrations
             modelBuilder.Entity("SWPSolution.Data.Entities.Category", b =>
                 {
                     b.Property<string>("CategoriesId")
-                        .HasMaxLength(10)
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
                         .IsUnicode(false)
-                        .HasColumnType("varchar(10)")
+                        .HasColumnType("varchar(50)")
                         .HasColumnName("categories_ID");
 
                     b.Property<string>("AgeRange")
@@ -686,16 +687,15 @@ namespace SWPSolution.Data.Migrations
             modelBuilder.Entity("SWPSolution.Data.Entities.Product", b =>
                 {
                     b.Property<string>("ProductId")
-                        .ValueGeneratedOnAdd()
                         .HasMaxLength(10)
                         .IsUnicode(false)
                         .HasColumnType("varchar(10)")
                         .HasColumnName("product_ID");
 
                     b.Property<string>("CategoriesId")
-                        .HasMaxLength(10)
+                        .HasMaxLength(50)
                         .IsUnicode(false)
-                        .HasColumnType("varchar(10)")
+                        .HasColumnType("varchar(50)")
                         .HasColumnName("categories_ID");
 
                     b.Property<string>("Description")

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SWPSolution.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class createDB : Migration
+    public partial class CategoryIdFix : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -155,6 +155,9 @@ namespace SWPSolution.Data.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    EmailVerificationCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EmailVerificationExpiry = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    TemporaryPassword = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -193,7 +196,7 @@ namespace SWPSolution.Data.Migrations
                 name: "Categories",
                 columns: table => new
                 {
-                    categories_ID = table.Column<string>(type: "varchar(10)", unicode: false, maxLength: 10, nullable: false),
+                    categories_ID = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     brandName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     AgeRange = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     SubCategories = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
@@ -262,7 +265,7 @@ namespace SWPSolution.Data.Migrations
                 columns: table => new
                 {
                     product_ID = table.Column<string>(type: "varchar(10)", unicode: false, maxLength: 10, nullable: false),
-                    categories_ID = table.Column<string>(type: "varchar(10)", unicode: false, maxLength: 10, nullable: true),
+                    categories_ID = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: true),
                     ProductName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     Quantity = table.Column<int>(type: "int", nullable: true),
                     Price = table.Column<double>(type: "float", nullable: true),
@@ -484,8 +487,8 @@ namespace SWPSolution.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "AppUsers",
-                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"), 0, "533ba7f8-8e95-4273-8c65-8abb80a239d7", "tedu.international@gmail.com", true, "Toan", "Bach", false, null, "tedu.international@gmail.com", "admin", "AQAAAAIAAYagAAAAEENsnF6LZD2inuJPrRTXtETeWbJoXa/MLEsYKnU8aOQd+ngE/FayMgsteyyiGDpDsg==", null, false, "", false, "admin" });
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "EmailVerificationCode", "EmailVerificationExpiry", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TemporaryPassword", "TwoFactorEnabled", "UserName" },
+                values: new object[] { new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"), 0, "f298b132-f5bb-4ee9-a7dc-2317a32276ad", "tedu.international@gmail.com", true, null, null, "Toan", "Bach", false, null, "tedu.international@gmail.com", "admin", "AQAAAAIAAYagAAAAEEhO8MrI0Afv9NYqV95WXUH9Nk+CDe0B2x9gC3W3/VULiwpT5zikXF3JF81xdNS6Lw==", null, false, "", "", false, "admin" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Address_member_ID",
