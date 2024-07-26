@@ -19,6 +19,7 @@ import {
 } from "../../../Service/OrderService/OrderService";
 import { useOrderManager, useUserProfile } from "../../../Store";
 import { toast, ToastContainer } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 export default function TrackingOrder({ listOrder, page }) {
   return (
     <TableContainer component={Paper}>
@@ -47,7 +48,7 @@ export default function TrackingOrder({ listOrder, page }) {
 }
 
 function Row({ row, page }) {
-  const { getOrderPagin, setListOrder } = useOrderManager();
+  const { getOrderPagin, setListOrder,addOrderAgain,orderAgain } = useOrderManager();
   const [open, setOpen] = React.useState(false);
   const [status, setStatus] = useState();
   const { userProfile } = useUserProfile();
@@ -106,7 +107,7 @@ function Row({ row, page }) {
     try {
       if (confirmed) {
         const res = await updateStatusOrder(orderID, -1);
-        console.log("delete", res.data);
+        // console.log("delete", res.data);
         if (res.status === 200) {
           const resPaging = await GetOrderPigingTrackingMember(
             userProfile.profile.member.memberId,
@@ -136,12 +137,18 @@ function Row({ row, page }) {
     }
   };
 
-
-  const handlePaymentAgain = () => {
-    toast.error("chưa xong cái này :()",{
-      autoClose:1000,
-    })
+  const navigator = useNavigate()
+  const handlePaymentAgain = (orderInfor) => {
+    try {
+      // console.log("ordernew", orderInfor);
+      addOrderAgain(orderInfor);
+      navigator("/payment/orderAgain")
+    } catch (error) {
+      console.log("error at add order tracking",error)
+    }
   }
+
+  
   return (
     <React.Fragment>
       <TableRow sx={{ "& > *": { borderBottom: "unset" } }}>
@@ -171,7 +178,7 @@ function Row({ row, page }) {
           </button>
           )
            : (<button
-            onClick={() => handlePaymentAgain(row.orderId)}
+            onClick={() => handlePaymentAgain(row)}
             className="tracking-button-order-user-complete"
           >
             Thanh Toán
@@ -202,7 +209,7 @@ function Row({ row, page }) {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {row.orderDetails.length > 0 &&
+                  {row.orderDetails && row.orderDetails.length > 0 &&
                     row.orderDetails.map((products, index) => (
                       <TableRow key={index}>
                         <TableCell>{products.product.productName}</TableCell>

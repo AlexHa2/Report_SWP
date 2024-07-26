@@ -96,14 +96,14 @@ export const useStaffManager = () => {
 };
 
 export const useOrderManager = () => {
-  const { listOrder, setListOrder, getOrderPagin,listHistoryOrder,setListHistoryOrder,listCurrentOrder,setlistCurrentOrder } =
+  const { listOrder, setListOrder, getOrderPagin,listHistoryOrder,setListHistoryOrder,listCurrentOrder,setlistCurrentOrder,addOrderAgain,orderAgain, setOrderAgain } =
     useContext(OrderManagerContext);
-  return { listOrder, setListOrder, getOrderPagin,listHistoryOrder,setListHistoryOrder,listCurrentOrder,setlistCurrentOrder };
+  return { listOrder, setListOrder, getOrderPagin,listHistoryOrder,setListHistoryOrder,listCurrentOrder,setlistCurrentOrder,addOrderAgain,orderAgain, setOrderAgain };
 };
 
 export const useMemberManager = () => {
-  const { listMember, setlistMember } = useContext(MemberManagerContext);
-  return { listMember, setlistMember };
+  const { listMember, setlistMember,getMemberPagingController } = useContext(MemberManagerContext);
+  return { listMember, setlistMember,getMemberPagingController };
 };
 
 export const usePromotionManger = () => {
@@ -122,7 +122,7 @@ export const usePreorder = () => {
     calculateTotal,
     listPreorder,
     setListPreOrder,
-    listPreorderHistory,setlistPreorderHistory,listCurrentPreOrder,setlistCurrentPreOrder
+    listPreorderHistory,setlistPreorderHistory,listCurrentPreOrder,setlistCurrentPreOrder,addPreorderAgain,preOrderAgain, setPreorderAgain
   } = useContext(PreorderContext);
   return {
     Preorder,
@@ -132,6 +132,6 @@ export const usePreorder = () => {
     calculateTotal,
     listPreorder,
     setListPreOrder,
-    listPreorderHistory,setlistPreorderHistory,listCurrentPreOrder,setlistCurrentPreOrder
+    listPreorderHistory,setlistPreorderHistory,listCurrentPreOrder,setlistCurrentPreOrder,addPreorderAgain,preOrderAgain, setPreorderAgain
   };
 };

@@ -765,5 +765,82 @@ namespace SWPSolution.Application.System.Admin
             };
             return new ApiSuccessResult<BlogDetailVM>(blogVm);
         }
+
+        //public async Task<bool> AddOrderTracking(string orderId, string staffId ,AddOrderTrackingRequest request)
+        //{
+        //    var order = await _context.Orders.FindAsync(orderId);
+        //    if (order == null) return false;
+        //    var staff = await _context.Staff.FindAsync(staffId);
+        //    if (staff == null) return false;
+
+        //    var tracking = new Order
+        //    {
+        //        OrderId = "",
+        //        MemberId = memberId,
+        //        PromotionId = request.PromotionId,
+        //        ShippingAddress = request.ShippingAddress,
+        //        TotalAmount = request.TotalAmount,
+        //        //OrderStatus = request.OrderStatus,
+        //        OrderDate = DateTime.Now,
+        //    };
+
+        //    _context..Add(order);
+        //    await _context.SaveChangesAsync();
+
+        //    return true;
+        //}
+        //public async Task<bool> UpdateOrder(string id, OrderUpdateRequest request)
+        //{
+        //    var order = await _context.Orders.FindAsync(id);
+        //    if (order == null) return false;
+
+        //    //   order.OrderStatus = request.orderStatus;
+
+        //    _context.Orders.Update(order);
+        //    await _context.SaveChangesAsync();
+        //    return true;
+        //}
+
+        //public async Task<bool> DeleteOrder(string id)
+        //{
+        //    var order = await _context.Orders.FindAsync(id);
+        //    if (order == null) return false;
+
+        //    _context.Orders.Remove(order);
+        //    await _context.SaveChangesAsync();
+        //    return true;
+        //}
+
+        //public async Task<OrderVM> GetOrderById(string id)
+        //{
+        //    var order = await _context.Orders.FindAsync(id);
+        //    if (order == null) return null;
+
+        //    return new OrderVM
+        //    {
+        //        OrderId = order.OrderId,
+        //        MemberId = order.MemberId,
+        //        PromotionId = order.PromotionId,
+        //        ShippingAddress = order.ShippingAddress,
+        //        TotalAmount = (double)order.TotalAmount,
+        //        OrderDate = (DateTime)order.OrderDate,
+        //    };
+        //}
+
+        //public async Task<List<OrderVM>> GetAllOrder()
+        //{
+        //    return await _context.Orders
+        //        .Select(order => new OrderVM
+        //        {
+        //            OrderId = order.OrderId,
+        //            MemberId = order.MemberId,
+        //            PromotionId = order.PromotionId,
+        //            ShippingAddress = order.ShippingAddress,
+        //            TotalAmount = (double)order.TotalAmount,
+        //            OrderDate = (DateTime)order.OrderDate,
+        //        })
+        //        .OrderByDescending(m => m.OrderId)
+        //        .ToListAsync();
+        //}
     }
 }

@@ -11,6 +11,8 @@ import {
 } from "../../../Store";
 import "./CheckoutPage.css";
 import { GetAllPromotion } from "../../../Service/PromotionService/PromotionService";
+import { urlImage } from "../../../utility/CustomAxios";
+
 const CheckoutPage = () => {
   const [state, dispatch] = useStore();
   const navigate = useNavigate();
@@ -106,7 +108,7 @@ const CheckoutPage = () => {
         addPromotion(
           promotionCurrent.promotionId,
           promotionCurrent.discountValue,
-          Preorder.preOrderProduct.price
+          Preorder.totalPreOrder
         );
       }
     },
@@ -248,7 +250,7 @@ const CheckoutPage = () => {
               {state.cartItems.map((item, index) => (
                 <div className="product-summary" key={index}>
                   <img
-                    src={`https://localhost:44358/user-content/${
+                    src={`${urlImage}/${
                       item.images[0] ? item.images[0].imagePath : "productImage"
                     }`}
                     alt={item.productName}
@@ -262,7 +264,7 @@ const CheckoutPage = () => {
                   </div>
                 </div>
               ))}
-              {listPromotion.length > 0 ? (
+              {listPromotion && listPromotion.length > 0 ? (
                 <>
                   <div className="discount-code">
                     <form onSubmit={formikSelectPromotion.handleSubmit}>
@@ -282,7 +284,7 @@ const CheckoutPage = () => {
                           onBlur={formikSelectPromotion.handleBlur}
                         >
                           <option value="" label="Chọn một mã khuyến mãi" />
-                          {listPromotion.length > 0 &&
+                          {listPromotion && listPromotion.length > 0 &&
                             listPromotion.map((promote, index) => (
                               <option value={promote.promotionId} key={index}>
                                 {promote.name}
@@ -333,7 +335,7 @@ const CheckoutPage = () => {
             <>
               <div className="product-summary">
                 <img
-                  src={`https://localhost:44358/user-content/${
+                  src={`${urlImage}${
                     Preorder.preOrderProduct.images[0]
                       ? Preorder.preOrderProduct.images[0].imagePath
                       : "productImage"
@@ -341,11 +343,11 @@ const CheckoutPage = () => {
                   alt={Preorder.preOrderProduct.productName}
                 />
                 <div className="product-info">
-                  <p>{Preorder.preOrderProduct.productName}</p>
-                  <p> {Preorder.preOrderProduct.price.toLocaleString()}₫</p>
+                  <p>{Preorder.preOrderProduct.productName}  </p>
+                  <p> {Preorder.preOrderProduct.price.toLocaleString()}₫  x{Preorder.preOrderProduct.quantity}</p>
                 </div>
               </div>
-              {listPromotion.length > 0 ? (
+              {listPromotion && listPromotion.length > 0 ? (
                 <>
                   <div className="discount-code">
                     <form onSubmit={formikSelectPromotion.handleSubmit}>
@@ -365,7 +367,7 @@ const CheckoutPage = () => {
                           onBlur={formikSelectPromotion.handleBlur}
                         >
                           <option value="" label="Chọn một mã khuyến mãi" />
-                          {listPromotion.length > 0 &&
+                          {listPromotion && listPromotion.length > 0 &&
                             listPromotion.map((promote, index) => (
                               <option value={promote.promotionId} key={index}>
                                 {promote.name}

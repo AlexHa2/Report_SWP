@@ -175,7 +175,7 @@ export default function Header() {
                   {listCate
                     ? listCate.map((cate, index) => (
                         <Link
-                          to={`/seachproduct/${cate.brandName}`}
+                          to={`/seachproduct/${cate.categoriesId}`}
                           style={{ color: "black", textDecoration: "none" }}
                         >
                           <li key={index} className="cate-type-product">
@@ -221,7 +221,7 @@ export default function Header() {
               <div>
                 <img src={blogImage} alt="blog" width={32} height={32}></img>
               </div>
-              <a href="#">Blog nhà milk</a>
+              <Link to={"/blog"}>Blog nhà milk</Link>
             </li>
           </ul>
         </div>
