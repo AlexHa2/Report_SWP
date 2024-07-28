@@ -5,12 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SWPSolution.ViewModels.System.Users
+namespace SWPSolution.ViewModels.Sales
 {
-    public class AddOrderTrackingRequest
+    public class OrderTrackingUpdateRequest
     {
-        public DateTime TrackingDate { get; set; }
-        public string Note { get; set; }
+        public string Note {  get; set; }
         public IFormFile? Image { get; set; }
     }
 }

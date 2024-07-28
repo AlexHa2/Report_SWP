@@ -114,12 +114,53 @@ namespace SWPSolution.AdminApp.Controllers
             return View(data);
         }
 
+        public async Task<IActionResult> OrderTrackings(string Keyword, DateTime? startDate, DateTime? endDate, int pageIndex = 1, int pageSize = 1)
+        {
+            startDate = startDate ?? new DateTime(2024, 1, 1); 
+            endDate = endDate ?? DateTime.Now;
+
+            var request = new GetTrackingPagingRequest()
+            {
+                Keyword = Keyword,
+                StartDate = startDate,
+                EndDate = endDate,
+                PageIndex = pageIndex,
+                PageSize = pageSize,
+            };
+            var data = await _userApiClient.GetOrderTrackingsPagings(request);
+            ViewBag.Keyword = Keyword;
+            ViewBag.StartDate = startDate;
+            ViewBag.EndDate = endDate;
+            return View(data);
+        }
+
+        public async Task<IActionResult> PreorderTrackings(string Keyword, DateTime? startDate, DateTime? endDate, int pageIndex = 1, int pageSize = 1)
+        {
+            startDate = startDate ?? new DateTime(2024, 1, 1);
+            endDate = endDate ?? DateTime.Now;
+
+            var request = new GetTrackingPagingRequest()
+            {
+                Keyword = Keyword,
+                StartDate = startDate,
+                EndDate = endDate,
+                PageIndex = pageIndex,
+                PageSize = pageSize,
+            };
+            var data = await _userApiClient.GetPreorderTrackingsPagings(request);
+            ViewBag.Keyword = Keyword;
+            ViewBag.StartDate = startDate;
+            ViewBag.EndDate = endDate;
+            return View(data);
+        }
+
         [HttpGet]
         public async Task<IActionResult> Login()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return View();
         }
+
 
         [HttpPost]
         public async Task<IActionResult> Login(LoginRequest request)

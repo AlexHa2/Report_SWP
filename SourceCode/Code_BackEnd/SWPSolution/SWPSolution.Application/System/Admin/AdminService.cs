@@ -9,6 +9,7 @@ using SWPSolution.Utilities.Exceptions;
 using SWPSolution.ViewModels.Catalog.Blog;
 using SWPSolution.ViewModels.Catalog.Categories;
 using SWPSolution.ViewModels.Common;
+using SWPSolution.ViewModels.Sales;
 using SWPSolution.ViewModels.System.Users;
 using System;
 using System.Collections.Generic;
@@ -20,10 +21,11 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace SWPSolution.Application.System.Admin
 {
-    
+
     public class AdminService : IAdminService
     {
         private readonly SWPSolutionDBContext _context;
@@ -766,81 +768,304 @@ namespace SWPSolution.Application.System.Admin
             return new ApiSuccessResult<BlogDetailVM>(blogVm);
         }
 
-        //public async Task<bool> AddOrderTracking(string orderId, string staffId ,AddOrderTrackingRequest request)
-        //{
-        //    var order = await _context.Orders.FindAsync(orderId);
-        //    if (order == null) return false;
-        //    var staff = await _context.Staff.FindAsync(staffId);
-        //    if (staff == null) return false;
+        //////////
+        public async Task<bool> AddOrderTracking(AddOrderTrackingRequest request)
+        {
+            var order = await _context.Orders.FindAsync(request.OrderId);
+            if (order == null) return false;
+            var staff = await _context.Staff.FindAsync(request.StaffId);
+            if (staff == null) return false;
 
-        //    var tracking = new Order
-        //    {
-        //        OrderId = "",
-        //        MemberId = memberId,
-        //        PromotionId = request.PromotionId,
-        //        ShippingAddress = request.ShippingAddress,
-        //        TotalAmount = request.TotalAmount,
-        //        //OrderStatus = request.OrderStatus,
-        //        OrderDate = DateTime.Now,
-        //    };
+            var generatedId = GenerateTrackingOrderId();
 
-        //    _context..Add(order);
-        //    await _context.SaveChangesAsync();
+            var tracking = new Trackingorder
+            {
+                TrackingorderId = generatedId,
+                OrderId = request.OrderId,
+                StaffId = request.StaffId,
+                TrackingDate = DateTime.Now,
+                Note = request.Note,
+                Image = request.Image?.ToString(),
+            };
 
-        //    return true;
-        //}
-        //public async Task<bool> UpdateOrder(string id, OrderUpdateRequest request)
-        //{
-        //    var order = await _context.Orders.FindAsync(id);
-        //    if (order == null) return false;
+            _context.Trackingorders.Add(tracking);
+            await _context.SaveChangesAsync();
 
-        //    //   order.OrderStatus = request.orderStatus;
+            return true;
+        }
 
-        //    _context.Orders.Update(order);
-        //    await _context.SaveChangesAsync();
-        //    return true;
-        //}
+        private string GenerateTrackingOrderId()
+        {
+            string month = DateTime.Now.ToString("MM");
+            string year = DateTime.Now.ToString("yy");
 
-        //public async Task<bool> DeleteOrder(string id)
-        //{
-        //    var order = await _context.Orders.FindAsync(id);
-        //    if (order == null) return false;
+            int autoIncrement = GetTrackngOrderNextAutoIncrement(month, year);
 
-        //    _context.Orders.Remove(order);
-        //    await _context.SaveChangesAsync();
-        //    return true;
-        //}
+            string formattedAutoIncrement = autoIncrement.ToString().PadLeft(3, '0');
 
-        //public async Task<OrderVM> GetOrderById(string id)
-        //{
-        //    var order = await _context.Orders.FindAsync(id);
-        //    if (order == null) return null;
+            return $"TO{month}{year}{formattedAutoIncrement}";
+        }
 
-        //    return new OrderVM
-        //    {
-        //        OrderId = order.OrderId,
-        //        MemberId = order.MemberId,
-        //        PromotionId = order.PromotionId,
-        //        ShippingAddress = order.ShippingAddress,
-        //        TotalAmount = (double)order.TotalAmount,
-        //        OrderDate = (DateTime)order.OrderDate,
-        //    };
-        //}
+        private int GetTrackngOrderNextAutoIncrement(string month, string year)
+        {
+            string pattern = $"TO{month}{year}";
 
-        //public async Task<List<OrderVM>> GetAllOrder()
-        //{
-        //    return await _context.Orders
-        //        .Select(order => new OrderVM
-        //        {
-        //            OrderId = order.OrderId,
-        //            MemberId = order.MemberId,
-        //            PromotionId = order.PromotionId,
-        //            ShippingAddress = order.ShippingAddress,
-        //            TotalAmount = (double)order.TotalAmount,
-        //            OrderDate = (DateTime)order.OrderDate,
-        //        })
-        //        .OrderByDescending(m => m.OrderId)
-        //        .ToListAsync();
-        //}
+            var maxAutoIncrement = _context.Trackingorders
+                .Where(c => c.TrackingorderId.StartsWith(pattern))
+                .Select(c => c.TrackingorderId.Substring(6, 3))
+                .AsEnumerable()
+                .Select(s => int.Parse(s))
+                .DefaultIfEmpty(0)
+                .Max();
+
+            return maxAutoIncrement + 1;
+        }
+
+        public async Task<bool> UpdateOrderTracking(string id, OrderTrackingUpdateRequest request)
+        {
+            var tracking = await _context.Trackingorders.FindAsync(id);
+            if (tracking == null) return false;
+
+            if (!string.IsNullOrEmpty(request.Note))
+                tracking.Note = request.Note;
+
+            if (!string.IsNullOrEmpty(request.Image?.ToString()))
+                tracking.Image = request.Image.ToString();
+
+            _context.Trackingorders.Update(tracking);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> DeleteOrderTracking(string id)
+        {
+            var tracking = await _context.Trackingorders.FindAsync(id);
+            if (tracking == null) return false;
+
+            _context.Trackingorders.Remove(tracking);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<OrderTrackingVM> GetOrderTrackingById(string id)
+        {
+            var tracking = await _context.Trackingorders.FindAsync(id);
+            if (tracking == null) return null;
+
+            return new OrderTrackingVM
+            {
+                TrackingId = tracking.TrackingorderId,
+                OrderId = tracking.OrderId,
+                StaffId = tracking.StaffId,
+                Note = tracking.Note,
+                TrackingDate = tracking.TrackingDate,
+            };
+        }
+
+        public async Task<List<OrderTrackingVM>> GetAllOrderTracking()
+        {
+            return await _context.Trackingorders
+                .Select(tracking => new OrderTrackingVM
+                {
+                    TrackingId = tracking.TrackingorderId,
+                    OrderId = tracking.OrderId,
+                    StaffId = tracking.StaffId,
+                    Note = tracking.Note,
+                    TrackingDate = tracking.TrackingDate,
+                })
+                .OrderByDescending(m => m.TrackingId)
+                .ToListAsync();
+        }
+
+        //////
+        public async Task<bool> AddPreorderTracking(AddOrderTrackingRequest request)
+        {
+            var order = await _context.PreOrders.FindAsync(request.OrderId);
+            if (order == null) return false;
+            var staff = await _context.Staff.FindAsync(request.StaffId);
+            if (staff == null) return false;
+
+            var generatedId = GenerateTrackingPreorderId();
+
+            var tracking = new TrackingPreorder
+            {
+                TrackingPreorderId = generatedId,
+                PreorderId = request.OrderId,
+                StaffId = request.StaffId,
+                TrackingDate = DateTime.Now,
+                Note = request.Note,
+                Image = request.Image?.ToString(),
+            };
+
+            _context.TrackingPreorders.Add(tracking);
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
+
+        private string GenerateTrackingPreorderId()
+        {
+            string month = DateTime.Now.ToString("MM");
+            string year = DateTime.Now.ToString("yy");
+
+            int autoIncrement = GetTrackingPreorderNextAutoIncrement(month, year);
+
+            string formattedAutoIncrement = autoIncrement.ToString().PadLeft(3, '0');
+
+            return $"TP{month}{year}{formattedAutoIncrement}";
+        }
+
+        private int GetTrackingPreorderNextAutoIncrement(string month, string year)
+        {
+            string pattern = $"TP{month}{year}";
+
+            var maxAutoIncrement = _context.TrackingPreorders
+                .Where(c => c.TrackingPreorderId.StartsWith(pattern))
+                .Select(c => c.TrackingPreorderId.Substring(6, 3))
+                .AsEnumerable()
+                .Select(s => int.Parse(s))
+                .DefaultIfEmpty(0)
+                .Max();
+
+            return maxAutoIncrement + 1;
+        }
+
+        public async Task<bool> UpdatePreorderTracking(string id, OrderTrackingUpdateRequest request)
+        {
+            var tracking = await _context.TrackingPreorders.FindAsync(id);
+            if (tracking == null) return false;
+
+            if (!string.IsNullOrEmpty(request.Note))
+                tracking.Note = request.Note;
+
+            if (!string.IsNullOrEmpty(request.Image?.ToString()))
+                tracking.Image = request.Image.ToString();
+
+            _context.TrackingPreorders.Update(tracking);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> DeletePreorderTracking(string id)
+        {
+            var tracking = await _context.TrackingPreorders.FindAsync(id);
+            if (tracking == null) return false;
+
+            _context.TrackingPreorders.Remove(tracking);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<OrderTrackingVM> GetPreorderTrackingById(string id)
+        {
+            var tracking = await _context.TrackingPreorders.FindAsync(id);
+            if (tracking == null) return null;
+
+            return new OrderTrackingVM
+            {
+                TrackingId = tracking.TrackingPreorderId,
+                OrderId = tracking.PreorderId,
+                StaffId = tracking.StaffId,
+                Note = tracking.Note,
+                TrackingDate = tracking.TrackingDate,
+            };
+        }
+
+        public async Task<List<OrderTrackingVM>> GetAllPreorderTracking()
+        {
+            return await _context.TrackingPreorders
+                .Select(tracking => new OrderTrackingVM
+                {
+                    TrackingId = tracking.TrackingPreorderId,
+                    OrderId = tracking.PreorderId,
+                    StaffId = tracking.StaffId,
+                    Note = tracking.Note,
+                    TrackingDate = tracking.TrackingDate,
+                })
+                .OrderByDescending(m => m.TrackingId)
+                .ToListAsync();
+        }
+
+        public async Task<PageResult<OrderTrackingVM>> GetOrderTrackingPaging(GetTrackingPagingRequest request)
+        {
+            var query = _context.Trackingorders.AsQueryable();
+
+            //Search by SatffId/OrderId
+            if (!string.IsNullOrEmpty(request.Keyword))
+            {
+                query = query.Where(x => x.StaffId.Equals(request.Keyword) || x.OrderId.Equals(request.Keyword));
+            }
+            //SearchByDate
+            if (request.StartDate.HasValue && request.EndDate.HasValue)
+            {
+                var startDate = request.StartDate.Value.Date;
+                var endDate = request.EndDate.Value.Date;
+
+                query = query.Where(x => x.TrackingDate >= startDate && x.TrackingDate <= endDate);
+            }
+
+            int totalRow = query.Count();
+
+            var data = query.Skip((request.PageIndex - 1) * request.PageSize)
+                .Take(request.PageSize)
+                .Select(tracking => new OrderTrackingVM()
+                {
+                    TrackingId = tracking.TrackingorderId,
+                    OrderId = tracking.OrderId,
+                    StaffId = tracking.StaffId,
+                    Note = tracking.Note,
+                    TrackingDate = tracking.TrackingDate,
+                }).OrderByDescending(m => m.TrackingId).ToList();
+
+            var pageResult = new PageResult<OrderTrackingVM>
+            {
+                TotalRecords = totalRow,
+                PageIndex = request.PageIndex,
+                PageSize = request.PageSize,
+                Items = data,
+            };
+            return pageResult;
+        }
+
+        public async Task<PageResult<OrderTrackingVM>> GetPreorderTrackingPaging(GetTrackingPagingRequest request)
+        {
+            var query = _context.TrackingPreorders.AsQueryable();
+
+            //Search by SatffId/OrderId
+            if (!string.IsNullOrEmpty(request.Keyword))
+            {
+                query = query.Where(x => x.StaffId.Equals(request.Keyword) || x.Preorder.Equals(request.Keyword));
+            }
+            //SearchByDate
+            if (request.StartDate.HasValue && request.EndDate.HasValue)
+            {
+                var startDate = request.StartDate.Value.Date;
+                var endDate = request.EndDate.Value.Date;
+
+                query = query.Where(x => x.TrackingDate >= startDate && x.TrackingDate <= endDate);
+            }
+
+            int totalRow = query.Count();
+
+            var data = query.Skip((request.PageIndex - 1) * request.PageSize)
+                .Take(request.PageSize)
+                .Select(tracking => new OrderTrackingVM()
+                {
+                    TrackingId = tracking.TrackingPreorderId,
+                    OrderId = tracking.PreorderId,
+                    StaffId = tracking.StaffId,
+                    Note = tracking.Note,
+                    TrackingDate = tracking.TrackingDate,
+                }).OrderByDescending(m => m.TrackingId).ToList();
+
+            var pageResult = new PageResult<OrderTrackingVM>
+            {
+                TotalRecords = totalRow,
+                PageIndex = request.PageIndex,
+                PageSize = request.PageSize,
+                Items = data,
+            };
+            return pageResult;
+        }
     }
 }

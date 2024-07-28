@@ -2,7 +2,6 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
 
 namespace SWPSolution.Data.Entities;
 
@@ -23,9 +22,8 @@ public partial class Payment
     public string PaymentMethod { get; set; }
 
     public DateTime PaymentDate { get; set; }
-    [JsonIgnore]
+
     public virtual Order Order { get; set; }
-    [JsonIgnore]
 
     public virtual PreOrder Preorder { get; set; }
 }

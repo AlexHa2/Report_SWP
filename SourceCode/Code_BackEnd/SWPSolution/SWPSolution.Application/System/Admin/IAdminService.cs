@@ -3,6 +3,7 @@ using SWPSolution.Data.Entities;
 using SWPSolution.ViewModels.Catalog.Blog;
 using SWPSolution.ViewModels.Catalog.Categories;
 using SWPSolution.ViewModels.Common;
+using SWPSolution.ViewModels.Sales;
 using SWPSolution.ViewModels.System.Users;
 using System;
 using System.Collections.Generic;
@@ -61,5 +62,29 @@ namespace SWPSolution.Application.System.Admin
         Task<PageResult<BlogDetailVM>> GetBlogsPaging(GetUserPagingRequest request);
 
         Task<ApiResult<BlogDetailVM>> GetBlogIdPaging(string id);
+
+        Task<bool> AddOrderTracking(AddOrderTrackingRequest request);
+
+        Task<bool> AddPreorderTracking(AddOrderTrackingRequest request);
+
+        Task<bool> UpdateOrderTracking(string id, OrderTrackingUpdateRequest request);
+
+        Task<bool> UpdatePreorderTracking(string id, OrderTrackingUpdateRequest request);
+
+        Task<bool> DeleteOrderTracking(string id);
+
+        Task<bool> DeletePreorderTracking(string id);
+
+        Task<OrderTrackingVM> GetOrderTrackingById(string id);
+
+        Task<OrderTrackingVM> GetPreorderTrackingById(string id);
+
+        Task<List<OrderTrackingVM>> GetAllOrderTracking();
+
+        Task<List<OrderTrackingVM>> GetAllPreorderTracking();
+
+        Task<PageResult<OrderTrackingVM>> GetOrderTrackingPaging(GetTrackingPagingRequest request);
+
+        Task<PageResult<OrderTrackingVM>> GetPreorderTrackingPaging(GetTrackingPagingRequest request);
     }
 }

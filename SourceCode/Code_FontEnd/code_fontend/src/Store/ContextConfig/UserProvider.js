@@ -82,7 +82,7 @@ function UserProvider({ children }) {
       }
     }
     autoGet();
-  }, [userProfile.userToken,userProfile.addresses]);
+  }, [userProfile.userToken]);
 
   const logOut = () => {
     localStorage.clear();

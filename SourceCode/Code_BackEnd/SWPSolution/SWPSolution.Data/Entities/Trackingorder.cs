@@ -5,19 +5,21 @@ using System.Collections.Generic;
 
 namespace SWPSolution.Data.Entities;
 
-public partial class OrderDetail
+public partial class Trackingorder
 {
-    public string OrderdetailId { get; set; }
+    public string TrackingorderId { get; set; }
 
     public string OrderId { get; set; }
 
-    public string ProductId { get; set; }
+    public string StaffId { get; set; }
 
-    public int Quantity { get; set; }
+    public DateTime? TrackingDate { get; set; }
 
-    public float Price { get; set; }
+    public string Note { get; set; }
+
+    public string Image { get; set; }
 
     public virtual Order Order { get; set; }
 
-    public virtual Product Product { get; set; }
+    public virtual Staff Staff { get; set; }
 }

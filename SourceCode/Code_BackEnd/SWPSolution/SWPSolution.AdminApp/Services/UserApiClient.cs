@@ -13,6 +13,7 @@ using System.Data.Entity;
 using System.Net.Http.Headers;
 using SWPSolution.ViewModels.Catalog.Product;
 using SWPSolution.ViewModels.Catalog.Blog;
+using SWPSolution.ViewModels.Sales;
 
 
 namespace SWPSolution.AdminApp.Services
@@ -166,6 +167,30 @@ namespace SWPSolution.AdminApp.Services
                 return JsonConvert.DeserializeObject<ApiSuccessResult<BlogDetailVM>>(body);
 
             return JsonConvert.DeserializeObject<ApiErrorResult<BlogDetailVM>>(body);
+        }
+
+        public async Task<PageResult<OrderTrackingVM>> GetOrderTrackingsPagings(GetTrackingPagingRequest request)
+        {
+            var client = _httpClientFactory.CreateClient();
+            client.BaseAddress = new Uri(_config["BaseAddress"]);
+            var response = await client.GetAsync($"/api/Admin/OrderTrackingPaging?pageIndex=" +
+                $"{request.PageIndex}&pageSize={request.PageSize}&keyword={request.Keyword}" +
+                $"&startDate={request.StartDate.Value.ToString("yyyy-MM-dd")}&endDate={request.EndDate.Value.ToString("yyyy-MM-dd")}");
+            var body = await response.Content.ReadAsStringAsync();
+            var tracking = JsonConvert.DeserializeObject<PageResult<OrderTrackingVM>>(body);
+            return tracking;
+        }
+
+        public async Task<PageResult<OrderTrackingVM>> GetPreorderTrackingsPagings(GetTrackingPagingRequest request)
+        {
+            var client = _httpClientFactory.CreateClient();
+            client.BaseAddress = new Uri(_config["BaseAddress"]);
+            var response = await client.GetAsync($"/api/Admin/PreorderTrackingPaging?pageIndex=" +
+                $"{request.PageIndex}&pageSize={request.PageSize}&keyword={request.Keyword}" +
+                $"&startDate={request.StartDate.Value.ToString("yyyy-MM-dd")}&endDate={request.EndDate.Value.ToString("yyyy-MM-dd")}");
+            var body = await response.Content.ReadAsStringAsync();
+            var tracking = JsonConvert.DeserializeObject<PageResult<OrderTrackingVM>>(body);
+            return tracking;
         }
     }
 }

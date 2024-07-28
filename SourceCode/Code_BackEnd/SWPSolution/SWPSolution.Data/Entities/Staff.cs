@@ -22,4 +22,8 @@ public partial class Staff
     public string Phone { get; set; }
 
     public virtual ICollection<Blog> Blogs { get; set; } = new List<Blog>();
+
+    public virtual ICollection<TrackingPreorder> TrackingPreorders { get; set; } = new List<TrackingPreorder>();
+
+    public virtual ICollection<Trackingorder> Trackingorders { get; set; } = new List<Trackingorder>();
 }

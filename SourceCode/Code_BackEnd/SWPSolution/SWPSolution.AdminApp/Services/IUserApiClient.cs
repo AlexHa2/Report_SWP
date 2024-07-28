@@ -2,6 +2,7 @@
 using SWPSolution.ViewModels.Catalog.Blog;
 using SWPSolution.ViewModels.Catalog.Product;
 using SWPSolution.ViewModels.Common;
+using SWPSolution.ViewModels.Sales;
 using SWPSolution.ViewModels.System.Users;
 
 namespace SWPSolution.AdminApp.Services
@@ -31,5 +32,9 @@ namespace SWPSolution.AdminApp.Services
         Task<PageResult<BlogDetailVM>> GetBlogsPagings(GetUserPagingRequest request);
 
         Task<ApiResult<BlogDetailVM>> GetBlogById(string id);
+
+        Task<PageResult<OrderTrackingVM>> GetOrderTrackingsPagings(GetTrackingPagingRequest request);
+
+        Task<PageResult<OrderTrackingVM>> GetPreorderTrackingsPagings(GetTrackingPagingRequest request);
     }
 }

@@ -4,8 +4,6 @@ using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using SWPSolution.Data.Entities;
-
 
 namespace SWPSolution.Data.Entities;
 
@@ -50,13 +48,13 @@ public partial class SWPSolutionDBContext : DbContext
 
     public virtual DbSet<Staff> Staff { get; set; }
 
+    public virtual DbSet<TrackingPreorder> TrackingPreorders { get; set; }
+
+    public virtual DbSet<Trackingorder> Trackingorders { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-
-
-         => optionsBuilder.UseSqlServer("Data Source=mssql.recs.site;Initial Catalog=SWP_Project;User ID=sa;Password=Thomas1910@;TrustServerCertificate=True");
-
-
+        => optionsBuilder.UseSqlServer("Data Source=mssql.recs.site;Initial Catalog=SWP_Project;User ID=sa;Password=Thomas1910@;TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -83,7 +81,7 @@ public partial class SWPSolutionDBContext : DbContext
         {
             entity.HasKey(e => e.AddressId).HasName("PK__Address__CAA543F0AA445DBA");
 
-            entity.ToTable("Address");
+            entity.ToTable("Address", tb => tb.HasTrigger("trg_generate_address_id"));
 
             entity.HasIndex(e => e.MemberId, "IX_Address_member_ID");
 
@@ -134,7 +132,7 @@ public partial class SWPSolutionDBContext : DbContext
         {
             entity.HasKey(e => e.BlogId).HasName("PK__Blog__298A9610ECF917C0");
 
-            entity.ToTable("Blog");
+            entity.ToTable("Blog", tb => tb.HasTrigger("trg_generate_blog_ID"));
 
             entity.HasIndex(e => e.StaffId, "IX_Blog_staff_ID");
 
@@ -189,7 +187,7 @@ public partial class SWPSolutionDBContext : DbContext
         {
             entity.HasKey(e => e.MemberId).HasName("PK__Member__B29A816CC54BDB96");
 
-            entity.ToTable("Member");
+            entity.ToTable("Member", tb => tb.HasTrigger("trg_generate_member_id"));
 
             entity.Property(e => e.MemberId)
                 .HasMaxLength(10)
@@ -239,7 +237,7 @@ public partial class SWPSolutionDBContext : DbContext
                 .HasMaxLength(10)
                 .IsUnicode(false)
                 .HasColumnName("Promotion_ID");
-            entity.Property(e => e.ShippingAddress).HasMaxLength(50);
+            entity.Property(e => e.ShippingAddress).HasMaxLength(255);
 
             entity.HasOne(d => d.Member).WithMany(p => p.Orders)
                 .HasForeignKey(d => d.MemberId)
@@ -290,8 +288,7 @@ public partial class SWPSolutionDBContext : DbContext
                 .HasMaxLength(10)
                 .IsUnicode(false)
                 .HasColumnName("payment_ID");
-            entity.Property(e => e.Amount)
-                .HasColumnName("amount");
+            entity.Property(e => e.Amount).HasColumnName("amount");
             entity.Property(e => e.DiscountValue).HasColumnName("discountValue");
             entity.Property(e => e.OrderId)
                 .HasMaxLength(10)
@@ -345,7 +342,7 @@ public partial class SWPSolutionDBContext : DbContext
                 .HasMaxLength(10)
                 .IsUnicode(false)
                 .HasColumnName("product_ID");
-            entity.Property(e => e.ShippingAddress).HasMaxLength(50);
+            entity.Property(e => e.ShippingAddress).HasMaxLength(255);
 
             entity.HasOne(d => d.Member).WithMany(p => p.PreOrders)
                 .HasForeignKey(d => d.MemberId)
@@ -376,8 +373,7 @@ public partial class SWPSolutionDBContext : DbContext
             entity.Property(e => e.Image)
                 .HasColumnType("text")
                 .HasColumnName("image");
-            entity.Property(e => e.ProductName).HasMaxLength(50);
-            entity.Property(e => e.StatusDescription).HasColumnName("StatusDescription");
+            entity.Property(e => e.ProductName).HasMaxLength(255);
 
             entity.HasOne(d => d.Categories).WithMany(p => p.Products)
                 .HasForeignKey(d => d.CategoriesId)
@@ -491,6 +487,92 @@ public partial class SWPSolutionDBContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("username");
         });
+
+        modelBuilder.Entity<TrackingPreorder>(entity =>
+        {
+            entity.HasKey(e => e.TrackingPreorderId).HasName("PK__tracking__7CB7517C4777DA2D");
+
+            entity.ToTable("tracking_Preorder");
+
+            entity.Property(e => e.TrackingPreorderId)
+                .HasMaxLength(10)
+                .IsUnicode(false)
+                .HasColumnName("TrackingPreorder_ID");
+            entity.Property(e => e.Image)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasColumnName("image");
+            entity.Property(e => e.Note)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasColumnName("note");
+            entity.Property(e => e.PreorderId)
+                .HasMaxLength(10)
+                .IsUnicode(false)
+                .HasColumnName("Preorder_ID");
+            entity.Property(e => e.StaffId)
+                .HasMaxLength(10)
+                .IsUnicode(false)
+                .HasColumnName("staff_ID");
+            entity.Property(e => e.TrackingDate)
+                .HasColumnType("date")
+                .HasColumnName("trackingDate");
+
+            entity.HasOne(d => d.Preorder).WithMany(p => p.TrackingPreorders)
+                .HasForeignKey(d => d.PreorderId)
+                .HasConstraintName("fk_trackingPreorder_Preorder");
+
+            entity.HasOne(d => d.Staff).WithMany(p => p.TrackingPreorders)
+                .HasForeignKey(d => d.StaffId)
+                .HasConstraintName("fk_trackingPreorder_staff");
+        });
+
+        modelBuilder.Entity<Trackingorder>(entity =>
+        {
+            entity.HasKey(e => e.TrackingorderId).HasName("PK__tracking__C10398803C98F84E");
+
+            entity.ToTable("trackingorder");
+
+            entity.Property(e => e.TrackingorderId)
+                .HasMaxLength(10)
+                .IsUnicode(false)
+                .HasColumnName("Trackingorder_ID");
+            entity.Property(e => e.Image)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasColumnName("image");
+            entity.Property(e => e.Note)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasColumnName("note");
+            entity.Property(e => e.OrderId)
+                .HasMaxLength(10)
+                .IsUnicode(false)
+                .HasColumnName("Order_ID");
+            entity.Property(e => e.StaffId)
+                .HasMaxLength(10)
+                .IsUnicode(false)
+                .HasColumnName("staff_ID");
+            entity.Property(e => e.TrackingDate)
+                .HasColumnType("date")
+                .HasColumnName("trackingDate");
+
+            entity.HasOne(d => d.Order).WithMany(p => p.Trackingorders)
+                .HasForeignKey(d => d.OrderId)
+                .HasConstraintName("fk_trackingorder_order");
+
+            entity.HasOne(d => d.Staff).WithMany(p => p.Trackingorders)
+                .HasForeignKey(d => d.StaffId)
+                .HasConstraintName("fk_trackingorder_staff");
+        });
+        modelBuilder.HasSequence("address_id_seq")
+            .HasMin(1L)
+            .HasMax(999L)
+            .IsCyclic();
+        modelBuilder.HasSequence("blog_id_seq")
+            .HasMin(1L)
+            .HasMax(999L)
+            .IsCyclic();
         modelBuilder.HasSequence("member_id_seq")
             .HasMin(1L)
             .HasMax(999L)

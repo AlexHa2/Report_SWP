@@ -23,9 +23,17 @@
 }
 
 .cart-product-text {
+  /* margin: 0;
+  text-overflow: ellipsis;
+  height: 70px; */
   margin: 0;
+  overflow: hidden;
   text-overflow: ellipsis;
   height: 70px;
+  width: 200px; /* Set an appropriate width */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Number of lines to show */
+  -webkit-box-orient: vertical;
 }
 
 .cart-product-text-money {

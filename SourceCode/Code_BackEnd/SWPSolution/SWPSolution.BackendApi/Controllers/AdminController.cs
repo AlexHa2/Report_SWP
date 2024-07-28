@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using SWPSolution.Application.System.Admin;
 using SWPSolution.Data.Entities;
 using SWPSolution.ViewModels.Catalog.Blog;
+using SWPSolution.ViewModels.Sales;
 using SWPSolution.ViewModels.System.Users;
 using System.Security.Claims;
 namespace SWPSolution.BackendApi.Controllers
@@ -381,6 +382,164 @@ namespace SWPSolution.BackendApi.Controllers
         {
             var user = await _adminService.GetBlogIdPaging(id);
             return Ok(user);
+        }
+
+        ////
+        [HttpPost("AddOrderTracking")]
+        public async Task<IActionResult> AddOrderTracking([FromForm] AddOrderTrackingRequest request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var result = await _adminService.AddOrderTracking(request);
+            if (!result)
+            {
+                return NotFound(new { message = "Order or Staff not found" });
+            }
+
+            return Ok(new { message = "Tracking added successfully" });
+        }
+
+        [HttpPut("UpdateOrderTracking")]
+        public async Task<IActionResult> UpdateOrderTracking(string id, OrderTrackingUpdateRequest request)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var result = await _adminService.UpdateOrderTracking(id, request);
+            if (!result)
+            {
+                return NotFound(new { Message = "Order not found." });
+            }
+
+            return Ok(new { Message = "Tracking updated successfully." });
+        }
+
+        [HttpDelete("DeleteOrderTracking")]
+        public async Task<IActionResult> DeleteOrderTracking(string id)
+        {
+            var result = await _adminService.DeleteOrderTracking(id);
+            if (!result)
+            {
+                return NotFound(new { Message = "Order not found." });
+            }
+
+            return Ok(new { Message = "Tracking deleted successfully." });
+        }
+
+        [HttpGet("GetOrderTrackingById")]
+        public async Task<IActionResult> GetOrderTrackingById(string id)
+        {
+            var order = await _adminService.GetOrderTrackingById(id);
+            if (order == null)
+            {
+                return NotFound(new { Message = "Tracking not found." });
+            }
+
+            return Ok(order);
+        }
+
+        [HttpGet("GetAllOrderTracking")]
+        public async Task<IActionResult> GetAllOrderTracking()
+        {
+            var order = await _adminService.GetAllOrderTracking();
+            if (order == null)
+            {
+                return NotFound(new { message = "No orders were found" });
+            }
+            return Ok(order);
+        }
+
+        ///
+        [HttpPost("AddPreorderTracking")]
+        public async Task<IActionResult> AddPreorderTracking([FromForm] AddOrderTrackingRequest request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var result = await _adminService.AddPreorderTracking(request);
+            if (!result)
+            {
+                return NotFound(new { message = "Order or Staff not found" });
+            }
+
+            return Ok(new { message = "Tracking added successfully" });
+        }
+
+        [HttpPut("UpdatePreorderTracking")]
+        public async Task<IActionResult> UpdatePreorderTracking(string id, OrderTrackingUpdateRequest request)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var result = await _adminService.UpdatePreorderTracking(id, request);
+            if (!result)
+            {
+                return NotFound(new { Message = "Order not found." });
+            }
+
+            return Ok(new { Message = "Tracking updated successfully." });
+        }
+
+        [HttpDelete("DeletePreorderTracking")]
+        public async Task<IActionResult> DeletePreorderTracking(string id)
+        {
+            var result = await _adminService.DeletePreorderTracking(id);
+            if (!result)
+            {
+                return NotFound(new { Message = "Order not found." });
+            }
+
+            return Ok(new { Message = "Tracking deleted successfully." });
+        }
+
+        [HttpGet("GetPreorderTrackingById")]
+        public async Task<IActionResult> GetPreorderTrackingById(string id)
+        {
+            var order = await _adminService.GetPreorderTrackingById(id);
+            if (order == null)
+            {
+                return NotFound(new { Message = "Tracking not found." });
+            }
+
+            return Ok(order);
+        }
+
+        [HttpGet("GetAllPreorderTracking")]
+        public async Task<IActionResult> GetAllPreorderTracking()
+        {
+            var order = await _adminService.GetAllPreorderTracking();
+            if (order == null)
+            {
+                return NotFound(new { message = "No orders were found" });
+            }
+            return Ok(order);
+        }
+
+        [HttpGet("OrderTrackingPaging")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetOrderTrackingsPaging([FromQuery] GetTrackingPagingRequest request)
+        {
+            var tracking = await _adminService.GetOrderTrackingPaging(request);
+            return Ok(tracking);
+        }
+
+        [HttpGet("PreorderTrackingPaging")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetPreorderTrackingsPaging([FromQuery] GetTrackingPagingRequest request)
+        {
+            var tracking = await _adminService.GetPreorderTrackingPaging(request);
+            return Ok(tracking);
         }
     }
 }
