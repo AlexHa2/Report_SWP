@@ -832,6 +832,8 @@ namespace SWPSolution.Application.System.Admin
             if (!string.IsNullOrEmpty(request.Image?.ToString()))
                 tracking.Image = request.Image.ToString();
 
+            tracking.TrackingDate = DateTime.Now;
+
             _context.Trackingorders.Update(tracking);
             await _context.SaveChangesAsync();
             return true;
@@ -940,6 +942,8 @@ namespace SWPSolution.Application.System.Admin
 
             if (!string.IsNullOrEmpty(request.Image?.ToString()))
                 tracking.Image = request.Image.ToString();
+
+            tracking.TrackingDate = DateTime.Now;
 
             _context.TrackingPreorders.Update(tracking);
             await _context.SaveChangesAsync();
